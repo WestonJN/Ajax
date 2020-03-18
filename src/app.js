@@ -6,14 +6,17 @@ const {addNewVisitor,
         listVisitors,
         deleteVisitor,
         updateVisitor,
-        viewVisitor,
-        deleteAllVisitor} = require("./database");
+        viewVisitor} = require("./database");
 
 const app = express();
 
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 app.use('/single-page-app', express.static('public'));
+
+app.get('/single-page-app', (req, res) => {
+	return res.sendFile(`index.html`);
+});
 
 createTable();
 
@@ -56,15 +59,6 @@ app.delete('/delete-visitor:visitor_id', (req,res,)=>{
 
     //Deleting a single visitor
     const visitor = deleteVisitor(visitor_id);
-
-    res.status(200).json({
-        status:'Is Okay'
-    });
-});
-
-app.delete('/delete-all-visitors', (req,res) =>{
-    
-    const visitor = deleteAllVisitor();
 
     res.status(200).json({
         status:'Is Okay'
