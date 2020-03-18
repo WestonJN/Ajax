@@ -1,6 +1,7 @@
 <html>
     <head>
         <title>Form</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
     </head>
         <body>
         <form action = "/new_visitor" method = "POST">
@@ -19,5 +20,21 @@
             <input type="submit" value="Submit"> 
 
         </form>
+        <div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Visitor</th>
+                        <th>Assistant</th>
+                        <th>Age</th>
+                        <th>Date Of visit</th>
+                        <th>Time of Visit</th>
+                        <th>Comments</th>
+                    </tr>
+                </thead>
+                <tbody id="visitors"></tbody>
+            </table>
+        </div>
      </body> 
 </html>
