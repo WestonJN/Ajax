@@ -37,7 +37,9 @@ const html = `
                 <tbody id="visitors"></tbody>
             </table>
         </div>
-     </body> 
+        <script type="text/javascript" src="main.js"></script>
+  
+      </body> 
 </html>`;
 
 module.exports = html;
